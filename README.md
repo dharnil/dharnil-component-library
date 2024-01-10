@@ -13,8 +13,8 @@ Current Web Application is an experiment to compile Rust based Web Assembly App.
  - VUE
  - WebAssembly
 
-## Developer Portfolio
-### Project Page Specs
+## Developer Portfolio Spec Sheet
+### Project Page
  - Project
  - Company
  - Tech Stack
