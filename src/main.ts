@@ -1,5 +1,14 @@
-import { createApp } from 'vue'
+import { App } from 'vue'
 import './style.css'
-import App from './App.vue'
 
-createApp(App).mount('#app')
+import LibButton from './components/LibButton.vue'
+import LibLabel from './components/LibLabel.vue'
+
+export { LibButton, LibLabel }
+
+export default {
+    install: (app: App) => {
+        app.component('LibButton', LibButton)
+        app.component('LibLabel', LibLabel)
+    }
+}
