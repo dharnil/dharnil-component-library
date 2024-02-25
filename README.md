@@ -1,28 +1,9 @@
-# Rust based Developer Portfolio
-Current Web Application is an experiment to compile Rust based Web Assembly App.
+# Dharnil's Component Library 
 
-## Research Outcome
- - Record any or all packages used to create this SPA
- - Record Each file with its use case
- - Record Directory and Compartmentalise suitable files.
- - Record Reason for decision for each above.
+## Vue 3 + TypeScript + Vite
 
-## Tech Stack & Libraries
- - Rust
- - HTML CSS
- - VUE
- - WebAssembly
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Developer Portfolio Spec Sheet
-### Project Page
- - Project
- - Company
- - Tech Stack
- - Date
- - Animated Project Thumbnail
+## Recommended IDE Setup
 
-### Commercial Solutions
-
-### About Section
-
-### Contact Section
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
