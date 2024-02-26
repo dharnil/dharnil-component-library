@@ -15,7 +15,7 @@
     "preview": "vite preview"
   },
   "publishConfig": {
-    "@dharnil:registry": "https://npm.pkg.github.com"
+    "@dharnil:registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "url": "git@github.com:dharnil/dharnil-component-library.git"
