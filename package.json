@@ -11,6 +11,9 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
+  "publishConfig": {
+    "@dharnil:registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "vue": "^3.4.19"
   },
