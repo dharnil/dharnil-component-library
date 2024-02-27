@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+          scope: ${{ github.repository_owner }}
       - run: npm i
       - run: npm publish
         env:
