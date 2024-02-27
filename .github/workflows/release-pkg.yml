@@ -1,28 +1,33 @@
-name: Release Package
+name: Node.js Package
 
 on:
   release:
     types: [created]
 
 jobs:
-  publish-github-private-package:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm test
+
+  publish-gpr:
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@dharnil'
-      - run: bun i
-      - run: echo "${NODE_AUTH_TOKEN}"
-      - run: npm login
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+      - run: npm i
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
