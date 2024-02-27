@@ -18,6 +18,7 @@ jobs:
           bun-version: latest
           node-version: 18
           registry-url: https://npm.pkg.github.com/
+          scope: '@dharnil'
       - run: bun i
       - run: npm publish
         env:
