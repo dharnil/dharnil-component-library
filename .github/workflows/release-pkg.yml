@@ -6,7 +6,6 @@ on:
 
 jobs:
   publish-github-private-package:
-    needs: build
     runs-on: ubuntu-latest
     permissions:
       packages: write
