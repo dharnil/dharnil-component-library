@@ -12,3 +12,10 @@ export default {
         app.component('LibLabel', LibLabel)
     }
 }
+
+// Local Testing
+import { createApp } from 'vue'
+import TestApp from './App.vue'
+
+const app = createApp( TestApp )
+app.mount( '#app' )
