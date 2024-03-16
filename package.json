@@ -21,6 +21,7 @@
     "url": "git@github.com:dharnil/dharnil-component-library.git"
   },
   "dependencies": {
+    "@azure/msal-browser": "^3.10.0",
     "vue": "^3.4.19"
   },
   "peerDependencies": {
