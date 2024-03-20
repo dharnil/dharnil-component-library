@@ -1,28 +1,34 @@
 <script setup lang="ts">
+// const bgColor = '#297720'
+
+withDefaults(
+    defineProps<{
+        label: string
+        bgColor?: string
+    }>(),
+    {
+        bgColor: '#297720'
+    }
+)
 </script>
 
 <template>
-    <button>Button UI</button>
+    <button>{{ label }}</button>
 </template>
 
 <style scoped>
 button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
+    width: max-content;
+    height: max-content;
+    padding: 6px 12px;
+    border: none;
+    border: 1px solid #009b00;
+    border-radius: 6px;
+    /* font-size: 14px; */
+    font-weight: bold;
+    line-height: 20px;
+    color: #ffffff;
+    background-color: v-bind(bgColor);
     cursor: pointer;
-    transition: border-color 0.25s;
-}
-
-button:hover {
-    border-color: #646cff;
-}
-
-button:active {
-    outline: 4px auto -webkit-focus-ring-color;
 }
 </style>
