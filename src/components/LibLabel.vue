@@ -2,7 +2,9 @@
 </script>
 
 <template>
-    <label>Label UI</label>
+    <label>
+        <slot></slot>
+    </label>
 </template>
 
 <style scoped>
@@ -12,7 +14,6 @@ label {
     padding: 0.6em 1.2em;
     font-size: 1em;
     font-weight: 500;
-    font-family: inherit;
     background-color: #1a1a1a;
 }
 </style>
