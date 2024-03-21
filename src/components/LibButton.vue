@@ -24,7 +24,6 @@ button {
     border: none;
     border: 1px solid #009b00;
     border-radius: 6px;
-    /* font-size: 14px; */
     font-weight: bold;
     line-height: 20px;
     color: #ffffff;
