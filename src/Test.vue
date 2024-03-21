@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import MicrosoftLogon from './components/MicrosoftLogon.vue'
-import LibButton from './components/LibButton.vue';
+import LibButton from './components/LibButton.vue'
+import LibTable from './components/LibTable.vue'
 
 const msalConfig = {
     auth: {
@@ -19,13 +20,17 @@ const msalConfig = {
     <div class="container">
         <MicrosoftLogon :msal-config="msalConfig" />
         <LibButton :label="'Button'"/>
+        <Suspense>
+            <LibTable />
+        </Suspense>
     </div>
 </template>
 
 <style scoped>
 .container {
+    height: 100vh;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     align-items: center;
     justify-items: center;
 }
