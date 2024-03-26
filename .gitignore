@@ -12,7 +12,7 @@ dist-ssr
 *.local
 
 # Editor directories and files
-Test.vue
+*Test.vue
 .vscode/*
 !.vscode/extensions.json
 .idea
