@@ -1040,8 +1040,8 @@ const returnProp = (key: string): Component => {
     <div class="table-container">
         <table class="table-layout">
             <tr>
-                <th v-for="key in Object.keys(data![0])">
-                    <LibButton :class="'header-' + key.toLowerCase().replace(/ /g, '-')" @click="sortColumn(key)"
+                <th v-for="key in Object.keys(data![0])"  :class="'header-' + key.toLowerCase().replace(/ /g, '-')">
+                    <LibButton @click="sortColumn(key)"
                         size="small" area="seemless" bgColor="#00000000" borderStyle="borderless"
                         :icon="returnProp(key)">{{ key }}</LibButton>
                 </th>
@@ -1078,6 +1078,7 @@ const returnProp = (key: string): Component => {
 .table-layout :deep(th) {
     border-bottom: 1px solid #4f4f4f;
     margin: 0 auto;
+    min-width: max-content;
 }
 
 .table-layout :deep(td) {
