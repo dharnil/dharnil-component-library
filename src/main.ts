@@ -24,8 +24,8 @@ export default {
 }
 
 // Local Testing
-import { createApp } from 'vue'
-import Test from './Test.vue'
+// import { createApp } from 'vue'
+// import Test from './Test.vue'
 
-const app = createApp( Test )
-app.mount( '#app' )
+// const app = createApp( Test )
+// app.mount( '#app' )
