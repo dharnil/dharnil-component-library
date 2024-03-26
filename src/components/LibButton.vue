@@ -1,32 +1,64 @@
 <script setup lang="ts">
-// const bgColor = '#297720'
 
 withDefaults(
     defineProps<{
-        label: string
+        size?: string
         bgColor?: string
+        borderStyle?: string
+        borderColor?: string
+        area?: string
+        icon?: object
     }>(),
     {
-        bgColor: '#297720'
+        size: '',
+        bgColor: '#297720',
+        borderStyle: '',
+        borderColor: '#009b00',
+        area: ''
     }
 )
 </script>
 
 <template>
-    <button>{{ label }}</button>
+    <button :class="[size + '-btn', borderStyle, area]">
+        <div>
+            <slot></slot>
+        </div>
+        <component v-if="icon" :is="icon"></component>
+    </button>
 </template>
 
 <style scoped>
+.small-btn {
+    height: 28px;
+}
+
+.large-btn {
+    height: 40px;
+}
+
+.borderless {
+    border: none;
+}
+
+.seemless {
+    padding: 6px;
+}
+
 button {
-    width: max-content;
-    height: max-content;
-    padding: 6px 12px;
-    border: 1px solid #009b00;
-    border-radius: 6px;
-    font-weight: bold;
-    line-height: 20px;
-    color: #ffffff;
+    border: v-bind(borderStyle) v-bind(borderColor);
     background-color: v-bind(bgColor);
+    max-width: max-content;
+    min-width: max-content;
+    align-items: center;
+    white-space: nowrap;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #ffffff;
     cursor: pointer;
+    display: flex;
+    height: 32px;
+    gap: 6px;
 }
 </style>
