@@ -6,8 +6,7 @@
   "module": "./dist/dharnil-component-library",
   "types": "main.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
