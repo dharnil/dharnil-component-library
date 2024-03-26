@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Component, onMounted, reactive } from 'vue'
+import { Component, reactive } from 'vue'
 import LibButton from './LibButton.vue';
 import LibUnsortedIcon from './LibUnsortedIcon.vue';
 import LibDescIcon from './LibDescIcon.vue';
@@ -990,9 +990,6 @@ await fetchData()
 //         "Adj Slope 250": -0.019168378300600704
 //     }
 // ])
-
-onMounted(() => {
-})
 
 const sortColumn = (key: string) => {
     Object.keys(data[0]).forEach(header => {
