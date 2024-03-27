@@ -22,8 +22,8 @@ export default {
         app.component('LibDescIcon', LibDescIcon)
         app.component('LibAscIcon', LibAscIcon)
         app.component('LibTable', LibTable)
-        app.component('LibTable', LibTable)
-        app.component('LibTable', LibTable)
+        app.component('LibDeleteIcon', LibTable)
+        app.component('LibEditIcon', LibTable)
     }
 }
 
