@@ -5,11 +5,13 @@ import LibButton from './components/LibButton.vue'
 import LibLabel from './components/LibLabel.vue'
 import MicrosoftLogon from './components/MicrosoftLogon.vue'
 import LibUnsortedIcon from './components/LibUnsortedIcon.vue';
+import LibDeleteIcon from './components/LibDeleteIcon.vue'
+import LibEditIcon from './components/LibEditIcon.vue'
 import LibDescIcon from './components/LibDescIcon.vue'
 import LibAscIcon from './components/LibAscIcon.vue'
 import LibTable from './components/LibTable.vue'
 
-export { LibButton, LibLabel, LibUnsortedIcon, LibDescIcon, LibAscIcon, LibTable }
+export { LibButton, LibLabel, LibUnsortedIcon, LibDescIcon, LibAscIcon, LibTable, LibDeleteIcon, LibEditIcon }
 
 export default {
     install: (app: App) => {
@@ -19,6 +21,8 @@ export default {
         app.component('LibUnsortedIcon', LibUnsortedIcon)
         app.component('LibDescIcon', LibDescIcon)
         app.component('LibAscIcon', LibAscIcon)
+        app.component('LibTable', LibTable)
+        app.component('LibTable', LibTable)
         app.component('LibTable', LibTable)
     }
 }
