@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 withDefaults(
     defineProps<{
         size?: string
@@ -12,7 +11,7 @@ withDefaults(
     {
         size: '',
         bgColor: '#297720',
-        borderStyle: '',
+        borderStyle: '1px solid',
         borderColor: '#009b00',
         area: ''
     }
@@ -21,9 +20,11 @@ withDefaults(
 
 <template>
     <button :class="[size + '-btn', borderStyle, area]">
-        <div>
-            <slot></slot>
-        </div>
+            <slot v-if="$slots.default">
+                <div>
+                    {{ $slots.default }}
+                </div>
+            </slot>
         <component v-if="icon" :is="icon"></component>
     </button>
 </template>
