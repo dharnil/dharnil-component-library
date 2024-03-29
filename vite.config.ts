@@ -13,7 +13,7 @@ export default defineConfig({
       name: 'dharnil-component-library'
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'pinia'],
       output: {
         globals: {
           Vue: 'vue'
