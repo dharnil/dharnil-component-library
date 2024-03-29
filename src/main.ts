@@ -1,4 +1,3 @@
-import { App } from 'vue'
 import './style.css'
 
 import LibAddIcon from './components/LibAddIcon.vue'
@@ -14,7 +13,7 @@ import LibTextField from './components/LibTextField.vue'
 import LibUnsortedIcon from './components/LibUnsortedIcon.vue'
 import MicrosoftLogon from './components/MicrosoftLogon.vue'
 
-export {
+export default {
     LibAddIcon,
     LibAscIcon,
     LibButton,
@@ -29,22 +28,22 @@ export {
     MicrosoftLogon
 }
 
-export default {
-    install: (app: App) => {
-        app.component('LibAddIcon', LibAddIcon)
-        app.component('LibAscIcon', LibAscIcon)
-        app.component('LibButton', LibButton)
-        app.component('LibCancelIcon', LibCancelIcon)
-        app.component('LibDeleteIcon', LibDeleteIcon)
-        app.component('LibDescIcon', LibDescIcon)
-        app.component('LibEditIcon', LibEditIcon)
-        app.component('LibLabel', LibLabel)
-        app.component('LibTable', LibTable)
-        app.component('LibTextField', LibTextField)
-        app.component('LibUnsortedIcon', LibUnsortedIcon)
-        app.component('MicrosoftLogon', MicrosoftLogon)
-    }
-}
+// export default {
+//     install: (app: App) => {
+//         app.component('LibAddIcon', LibAddIcon)
+//         app.component('LibAscIcon', LibAscIcon)
+//         app.component('LibButton', LibButton)
+//         app.component('LibCancelIcon', LibCancelIcon)
+//         app.component('LibDeleteIcon', LibDeleteIcon)
+//         app.component('LibDescIcon', LibDescIcon)
+//         app.component('LibEditIcon', LibEditIcon)
+//         app.component('LibLabel', LibLabel)
+//         app.component('LibTable', LibTable)
+//         app.component('LibTextField', LibTextField)
+//         app.component('LibUnsortedIcon', LibUnsortedIcon)
+//         app.component('MicrosoftLogon', MicrosoftLogon)
+//     }
+// }
 
 // Local Testing
 // import { createPinia } from 'pinia'
