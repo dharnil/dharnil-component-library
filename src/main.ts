@@ -13,6 +13,21 @@ import LibTextField from './components/LibTextField.vue'
 import LibUnsortedIcon from './components/LibUnsortedIcon.vue'
 import MicrosoftLogon from './components/MicrosoftLogon.vue'
 
+export {
+    LibAddIcon,
+    LibAscIcon,
+    LibButton,
+    LibCancelIcon,
+    LibDeleteIcon,
+    LibDescIcon,
+    LibEditIcon,
+    LibLabel,
+    LibTable,
+    LibTextField,
+    LibUnsortedIcon,
+    MicrosoftLogon
+}
+
 export default {
     LibAddIcon,
     LibAscIcon,
