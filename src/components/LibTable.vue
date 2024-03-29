@@ -163,6 +163,7 @@ const removeFilter = (index: number) => {
 }
 
 .component-container {
+    max-width: 1000px;
     width: 90%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -174,7 +175,6 @@ const removeFilter = (index: number) => {
     grid-column: span 2;
     border: 1px solid #4f4f4f;
     border-radius: 6px;
-    max-width: 1000px;
     overflow: scroll;
     width: 100%;
 }
