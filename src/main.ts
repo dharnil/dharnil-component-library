@@ -1,4 +1,3 @@
-import { createPinia } from 'pinia'
 import { App } from 'vue'
 import './style.css'
 
@@ -48,6 +47,7 @@ export default {
 }
 
 // Local Testing
+// import { createPinia } from 'pinia'
 // import { createApp } from 'vue'
 // import Test from './Test.vue'
 
