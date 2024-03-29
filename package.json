@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@azure/msal-browser": "^3.10.0",
+    "pinia": "^2.1.7",
     "vue": "^3.4.19"
   },
   "peerDependencies": {

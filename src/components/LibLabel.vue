@@ -1,19 +1,36 @@
 <script setup lang="ts">
+withDefaults(
+    defineProps<{
+        size?: string
+        bgColor?: string
+    }>(),
+    {
+        size: '',
+        bgColor: '#297720',
+    }
+)
 </script>
 
 <template>
-    <label>
-        <slot></slot>
+    <label :class="[size + '-label', 'lable-layout']">
+        <slot>
+            <div>
+                {{ $slots.default }}
+            </div>
+        </slot>
     </label>
 </template>
 
 <style scoped>
-label {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    background-color: #1a1a1a;
+.large-label {
+    font-size: 40px !important;
+}
+
+.small-label {
+    font-size: 26px !important;
+}
+
+.lable-layout {
+    font-size: 32px;
 }
 </style>
