@@ -55,10 +55,10 @@ export default {
 // }
 
 // Local Testing
-import { createPinia } from 'pinia'
-import { createApp } from 'vue'
-import Test from './Test.vue'
+// import { createPinia } from 'pinia'
+// import { createApp } from 'vue'
+// import Test from './Test.vue'
 
-const app = createApp( Test )
-app.use(createPinia())
-app.mount( '#app' ) 
+// const app = createApp( Test )
+// app.use(createPinia())
+// app.mount( '#app' ) 
