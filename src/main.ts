@@ -45,13 +45,7 @@ export default {
 
 // export default {
 //     install: (app: App) => {
-//         app.component('LibAddIcon', LibAddIcon)
-//         app.component('LibAscIcon', LibAscIcon)
 //         app.component('LibButton', LibButton)
-//         app.component('LibCancelIcon', LibCancelIcon)
-//         app.component('LibDeleteIcon', LibDeleteIcon)
-//         app.component('LibDescIcon', LibDescIcon)
-//         app.component('LibEditIcon', LibEditIcon)
 //         app.component('LibLabel', LibLabel)
 //         app.component('LibTable', LibTable)
 //         app.component('LibTextField', LibTextField)
@@ -61,10 +55,10 @@ export default {
 // }
 
 // Local Testing
-// import { createPinia } from 'pinia'
-// import { createApp } from 'vue'
-// import Test from './Test.vue'
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import Test from './Test.vue'
 
-// const app = createApp( Test )
-// app.use(createPinia())
-// app.mount( '#app' ) 
+const app = createApp( Test )
+app.use(createPinia())
+app.mount( '#app' ) 
