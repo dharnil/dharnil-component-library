@@ -7,7 +7,9 @@ import LibCancelIcon from './components/LibCancelIcon.vue'
 import LibDeleteIcon from './components/LibDeleteIcon.vue'
 import LibDescIcon from './components/LibDescIcon.vue'
 import LibEditIcon from './components/LibEditIcon.vue'
+import LibFilterIcon from './components/LibFilterIcon.vue'
 import LibLabel from './components/LibLabel.vue'
+import LibSearchIcon from './components/LibSearchIcon.vue'
 import LibTable from './components/LibTable.vue'
 import LibTextField from './components/LibTextField.vue'
 import LibUnsortedIcon from './components/LibUnsortedIcon.vue'
@@ -21,7 +23,9 @@ export {
     LibDeleteIcon,
     LibDescIcon,
     LibEditIcon,
+    LibFilterIcon,
     LibLabel,
+    LibSearchIcon,
     LibTable,
     LibTextField,
     LibUnsortedIcon,
@@ -36,7 +40,9 @@ export default {
     LibDeleteIcon,
     LibDescIcon,
     LibEditIcon,
+    LibFilterIcon,
     LibLabel,
+    LibSearchIcon,
     LibTable,
     LibTextField,
     LibUnsortedIcon,
@@ -61,4 +67,4 @@ export default {
 
 // const app = createApp( Test )
 // app.use(createPinia())
-// app.mount( '#app' ) 
+// app.mount( '#app' )
