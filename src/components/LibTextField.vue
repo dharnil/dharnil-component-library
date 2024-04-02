@@ -8,6 +8,7 @@ withDefaults(
         borderStyle?: string
         borderColor?: string
         icon?: object
+        placeHolder?: string
     }>(),
     {
         size: '',
@@ -28,7 +29,7 @@ const helloWorld = () => {
 
 <template>
     <div :class="['textfield', 'textfield-' + size]">
-        <input type="text" placeholder="Search" class="textfield-input" v-model="inputValue" @keyup.enter="$emit('getInput', inputValue); helloWorld()">
+        <input type="text" :placeholder="placeHolder" class="textfield-input" v-model="inputValue" @keyup.enter="$emit('getInput', inputValue); helloWorld()">
     </div>
 </template>
 
@@ -42,6 +43,7 @@ const helloWorld = () => {
     align-items: center;
     padding: 0 6px;
     gap: 6px;
+    overflow: hidden;
 }
 
 .textfield-tag {
@@ -53,7 +55,7 @@ const helloWorld = () => {
 .textfield-input {
     all: unset;
     height: max-content;
-    width: 120px;
+    width: 150px;
     background-color: #1b2123;
 }
 
