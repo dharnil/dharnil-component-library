@@ -4,10 +4,11 @@ import LibButton from './LibButton.vue';
 import LibUnsortedIcon from './LibUnsortedIcon.vue';
 import LibDescIcon from './LibDescIcon.vue';
 import LibAscIcon from './LibAscIcon.vue';
-import LibAddIcon from './LibAddIcon.vue';
+import LibSearchIcon from './LibSearchIcon.vue';
 import LibTextField from './LibTextField.vue';
 import LibLabel from './LibLabel.vue';
 import LibCancelIcon from './LibCancelIcon.vue';
+import LibFilterIcon from './LibFilterIcon.vue';
 import { useTableStore } from '../store/TableStore';
 
 const prop = withDefaults(
@@ -66,15 +67,16 @@ const sortColumn = (key: string) => {
     returnProp(key)
 }
 
-let filterArray: string[] = reactive([])
+let searchArray: string[] = reactive([])
+let filterArray: {column: string, filter: string}[] = reactive([])
 
-const inputValue = async (value: string) => {
-    filterArray.push(value)
-    filterData()
+const searchValue = async (value: string) => {
+    searchArray.push(value)
+    searchData()
 }
 
-const filterData = async () => {
-    filterArray.forEach(filt => {
+const searchData = async () => {
+    searchArray.forEach(filt => {
         data.data = data.data.filter(a => {
             console.log(Object.keys(a).length)
             for (let i = 0; i < Object.values(a).length; i++) {
@@ -86,10 +88,27 @@ const filterData = async () => {
     })
 }
 
-const removeFilter = (index: number) => {
-    filterArray.splice(index, 1)
-    data.data = prop.dataSet
+const filterValue = async (value: string) => {
+    filterArray.push({
+        column: value.split('.')[0],
+        filter: value.split('.')[1]
+    })
+    filterData()
+}
 
+const filterData = async () => {
+    filterArray.forEach(filt => {
+        data.data = data.data.filter(a => {
+            console.log(a[filterArray[0].column as keyof typeof a])
+            if ((a[filterArray[0].column as keyof typeof a] as string).toLowerCase().includes(filterArray[0].filter.toLowerCase()))
+                return true
+        })
+    })
+}
+
+const removeTag = (index: number, array: any[]) => {
+    array.splice(index, 1)
+    data.data = prop.dataSet
 }
 </script>
 
@@ -100,13 +119,22 @@ const removeFilter = (index: number) => {
         <div class="action-button">
             <div class="table-filter-list">
                 <!-- Horizontal Scroll Supported on Trackpad Enabled Devices -->
-                <LibButton v-for="(filter, index) in filterArray" :key="index" :icon="LibCancelIcon" bgColor="#1b2123"
-                    borderColor="#4f4f4f" size="small" class="table-filter-tag" @click="removeFilter(index)">{{ filter
+                <LibButton v-for="(filter, index) in searchArray" :key="index" :icon="LibCancelIcon" bgColor="#1b2123"
+                    borderColor="#4f4f4f" size="small" class="table-filter-tag" @click="removeTag(index, searchArray)">{{ filter
                     }}
                 </LibButton>
+                <LibButton v-for="(filter, index) in filterArray" :key="index" :icon="LibCancelIcon" bgColor="#1b2123"
+                    borderColor="#4f4f4f" size="small" class="table-filter-tag" @click="removeTag(index, filterArray)">
+                    {{ filter.column + ' in ' + filter.filter }}
+                </LibButton>
             </div>
-            <LibTextField @get-input="inputValue" size="small" />
-            <LibButton size="small" :icon="LibAddIcon">Add</LibButton>
+            <!-- <LibButton size="small" :icon="LibAddIcon">Add</LibButton> -->
+            <LibButton @click="" :icon="LibSearchIcon" size="small" bgColor="#1b2123" borderColor="#4f4f4f"
+                area="seemless" />
+            <LibButton @click="" :icon="LibFilterIcon" size="small" bgColor="#1b2123" borderColor="#4f4f4f"
+                area="seemless" />
+            <LibTextField @get-input="searchValue" size="small" class="lib-table-input-field" place-holder="Search" />
+            <LibTextField @get-input="filterValue" size="small" class="lib-table-input-field" place-holder="Filter (Column.Value)" />
         </div>
         <div v-if="data.data[0] && Object.keys(data.data[0]).length != 0" class="table-container">
             <table class="table-layout">
@@ -121,7 +149,7 @@ const removeFilter = (index: number) => {
                             borderStyle="borderless">{{ action.label }}</LibButton>
                     </th>
                 </tr>
-                <tr v-for="(values, index) in data.data!.slice(0, 10)" :key="index">
+                <tr v-for="(values, index) in data.data!" :key="index">
                     <td v-for="value in Object.values(values)"
                         :class="{ 'header-column': Object.values(values).indexOf(value) == 0 }">
                         <div>{{ value }}</div>
