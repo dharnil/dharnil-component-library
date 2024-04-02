@@ -100,7 +100,7 @@ const filterData = async () => {
     filterArray.forEach(filt => {
         data.data = data.data.filter(a => {
             console.log(a[filterArray[0].column as keyof typeof a])
-            if ((a[filterArray[0].column as keyof typeof a] as string).toLowerCase().includes(filterArray[0].filter.toLowerCase()))
+            if ((a[filt.column as keyof typeof a] as string).toLowerCase().includes(filt.filter.toLowerCase()))
                 return true
         })
     })
